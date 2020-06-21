@@ -1,0 +1,117 @@
+<html>  
+  <body>  
+    
+    <!--H1 and gameslists -->
+    <section>      
+      <h1>Hey, and welcome to my game world!         
+      </h1> 
+      <hr>  
+     <input type="button" class="randomGame" value="Start game!" >  
+      <hr>
+      <ul> 
+        <li class="list" id="game1"> Game 1 
+        </li> 
+        <li class="list" id="game2"> Game 2 
+        </li>
+        <li class="list" id="game3"> Game 3
+        </li>
+        <li class="list" id="game4"> Game 4
+        </li>
+        <li class="list" id="game5"> Game 5
+        </li>
+        <li class="list" id="game6"> Game 6
+        </li> 
+      </ul>
+      <hr>
+    </section>
+    
+    <!-- Hintcount-->
+    <section> 
+      <p id="hintCount"></p> 
+    </section>
+    
+    <!--Hints -->
+    <section>
+      <figure class="hint1"><div class="hint" id="type1">
+        ? 
+      </div>type1</figure>
+      <figure class="hint1"><div class="hint" id="type2">
+        ?
+      </div>type2</figure>
+      <figure class="hint1"><div class="hint" id="pokedex">
+        ?
+      </div>pokedex</figure>
+      <figure class="hint1"><div class="hint" id="legendary">
+        ?
+      </div>legendary</figure>
+      <figure class="hint1"><div class="hint" id="evStages">
+        ?
+      </div>evStages</figure>
+      <figure class="hint1"><div class="hint" id="whichStage">      
+        ?
+      </div>whichStage</figure>
+      <!--<figure class="hint" id="firstStage">
+        ?firstStage
+      </figure>
+      <figure class="hint" id="secondStage">
+        ?secondStage
+      </figure>
+      <figure class="hint" id="thirdStage">
+        ?thirdStage
+      </figure>-->
+      <figure class="hint1"><div class="hint" id="priColor">
+        ?
+      </div>priColor</figure>
+      <figure class="hint1"><div class="hint" id="secColor">
+        ?
+      </div>secColor</figure>
+      <figure class="hint1"><div class="hint" id="generation">
+        ?
+      </div>generation</figure>
+      <figure class="hint1"><div class="hint" id="category">
+        ?
+      </div>Category</figure>
+    </section>
+    
+    <!--Picture of right pokemon -->
+    <section>
+    <figure class="pokemonPic">?</figure>
+    </section>
+    <hr>
+    
+    <!--Reset button -->
+    <section>
+    <label id="resetLabel">Want to choose another game? 
+    <input id="resetBtn" type="button" value="Reset">  
+    </label>
+    </section>
+    <hr>
+    
+    <!--Winningtext and game stats -->
+    <section> 
+      <h2 id="winText">Winning text</h2>
+      <figure id="winPokemon"> Picture of pokemon </figure>
+      <p id="winStats">hints used, games played, try again?</p>  
+      <hr>
+    </section>
+    
+    <!--Ready to guess button -->
+    <section>
+      <label>Are you ready to guess?</label>
+      <input type="button" class="toGuess" value="I want to guess">
+    </section>
+    <hr>
+    
+    <!--Guessing area -->
+    <section>
+      <label>Who do you think it is?
+        <input type="text" class="guess">  
+      </label>  
+      <input type="button" class="submit" value="Choose!">   
+    </section> 
+    <hr> 
+    <section>
+      <p class="test">hei </p>
+    </section> 
+  </body>
+</html>
