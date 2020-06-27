@@ -1,0 +1,347 @@
+let tyranitar = {
+  Type: {Type1: "Dark", Type2: "Rock"}, 
+  Pokedex: "#248",
+  Legendary: "No",
+  EvStages: "3",
+  WhichStage: "Stage 3/3",
+  FirstStage: "Larvitar",
+  SecondStage: "Pupitar",
+  Colors: {Primary:"Green", Secondary: "Blue/Black"},
+  Generation: "2",
+  Category: "Armor pokemon",
+  Name: "Tyranitar"
+  
+}
+let gyrados = {
+  Type: {Type1: "Water", Type2: "Flying"},
+  Pokedex: "#130",
+  Legendary: "No",
+  EvStages: "2",
+  WhichStage: "Stage 2/2",
+  FirstStage: "Magikarp",
+  Colors: {Primary:"Blue", Secondary: "Tan/White"},
+  Generation: "1",
+  Category: "Atrocious pokemon",
+  Name: "Gyrados",
+}
+let kadabra = {
+  Type: {Type1: "Psychic", Type2: "Psychic"},
+  Pokedex: "#064",
+  Legendary: "No",
+  EvStages: "3",
+  WhichStage: "Stage 2/3",
+  FirstStage: "Abra",
+  ThirdStage: "Alakazam",
+  Colors: {Primary:"Yellow", Secondary: "Brown"},
+  Generation: "1",
+  Category: "Psi pokemon",
+  Name: "Kadabra",
+}
+let volcarona = {
+  Type: {Type1: "Fire", Type2: "Bug"},
+  Pokedex: "#637",
+  Legendary: "No",
+  EvStages: "2",
+  WhichStage: "Stage 2/2",
+  FirstStage: "Larvesta",
+  Colors: {Primary:"Red", Secondary: "Black/White"},
+  Generation: "5",
+  Category: "Sun pokemon",
+  Name: "Volcarona",
+}
+let lugia = {
+  Type: {Type1: "Flying", Type2: "Psychic"},
+  Pokedex: "#249",
+  Legendary: "Yes",
+  EvStages: "1",
+  WhichStage: "Stage 1/1",
+  Colors: {Primary:"Silver", Secondary: "Lightblue/blue"},
+  Generation: "2",
+  Category: "Diving pokemon",
+  Name: "Lugia",
+}
+let chandelure = {
+  Type: {Type1: "Ghost", Type2: "Fire"},
+  Pokedex: "#609",
+  Legendary: "No",
+  EvStages: "3",
+  WhichStage: "Stage 3\3",
+  FirstStage: "Litwick",
+  SecondStage: "Lampent",
+  Colors: {Primary:"Purple", Secondary: "Black"},
+  Generation: "5",
+  Category: "Luring pokemon",
+  Name: "Chandelure",
+}
+
+let resetText = [
+"Really man? This is the easiest to guess.....", "It's okey dude, can't guess em'all you know", "This on is pretty hard man, dont worry about it", "You'll get it next time, I just know it!", "Okey, i will give you an easy one next round", "Yeah I know, you almost had it"
+]
+let winText = [
+  "Shiiit bro, you actually got it right. Im kinda impressed.", "Wow, thats correct! Good job, girl.", "Eyyyyyyy, thats how it's done!", "I have to say, I didn't think you would guess the right one.", "Hmmm, are you cheating dude? Nobody get's this one right.", "Ash would be proud of you"
+]
+let allGames = [
+ game1fun, game2fun, game3fun, game4fun, game5fun, game6fun
+]
+
+function chooseWinText(){
+  let number = Math.floor(Math.random() * winText.length)
+  let text = winText[number]
+  winText.splice(number, 1)
+  return text
+}
+
+let gamesPlayed = 0
+let hintCounter = 0
+let userGuess = 0
+let wins = 0
+
+
+let resetBtn = document.querySelector("#resetBtn")
+let hintCount = document.querySelector("#hintCount")
+let randomGame = document.querySelector(".randomGame")
+
+let test = document.querySelector(".test")
+
+let type1X = document.querySelector("#type1X")
+let type1 = document.querySelector("#type1")
+let type2X = document.querySelector("#type2X")
+let type2 = document.querySelector("#type2")
+let pokedexX = document.querySelector("#pokedexX")
+let pokedex = document.querySelector("#pokedex")
+let legendaryX = document.querySelector("#legendaryX")
+let legendary = document.querySelector("#legendary")
+let evStagesX = document.querySelector("#evStagesX")
+let evStages = document.querySelector("#evStages")
+let whichStageX = document.querySelector("#whichStageX")
+let whichStage = document.querySelector("#whichStage")
+let priColorX = document.querySelector("#priColorX")
+let priColor = document.querySelector("#priColor")
+let secColorX = document.querySelector("#secColorX")
+let secColor = document.querySelector("#secColor")
+let generationX = document.querySelector("#generationX")
+let generation = document.querySelector("#generation")
+let categoryX = document.querySelector("#categoryX")
+let category = document.querySelector("#category")
+let corPokemon = document.querySelector("#corPokemon")
+
+let nextPokemonS = document.querySelector(".nextPokemon")
+let endContent = document.querySelector(".endContent")
+
+let endText = document.querySelector("#endText")
+let endPokemon = document.querySelector("#endPokemon")
+let endStats = document.querySelector("#endStats")
+
+let guess = document.querySelector(".guess")
+let submit = document.querySelector(".submit")
+let oneMore = document.querySelector(".oneMore")
+
+function removeGame(){
+  randomGame.disabled = true
+}
+
+
+function playGame (pokemon){
+  function remove(){
+    type1X.removeEventListener("click", type1Fun)
+    type2X.removeEventListener("click", type2Fun)
+    pokedexX.removeEventListener("click", pokedexFun)
+    legendaryX.removeEventListener("click", legendaryFun)
+    evStagesX.removeEventListener("click", evStagesFun)
+    whichStageX.removeEventListener("click", whichStageFun)
+    priColorX.removeEventListener("click", priColorFun)
+    secColorX.removeEventListener("click", secColorFun) 
+    generationX.removeEventListener("click", generationFun)
+    categoryX.removeEventListener("click", categoryFun)
+  }
+  function resetGame(){
+  let allHints = document.querySelectorAll(".hint")
+  hintCounter = 0
+  guess.value = ""
+  hintCount.textContent = ""
+  allHints.forEach(function(allHints){
+    allHints.textContent = "?"
+  })
+  corPokemon.textContent = "?"
+  addGame()
+  remove()
+  resetBtn.disabled = true
+  endText.textContent = chooseResetText()
+  endStats.textContent = "Games played: " + gamesPlayed + ". Hints used: " + hintCounter + ". Guesses: " + userGuess + ". Wins: " + wins + ". The pokemon you were looking for is " + pokemon.Name
+} 
+  function guessWho(){
+    
+    userGuess++
+    let pokemonGuess = guess.value.toLowerCase()  
+    if (pokemon.Name.toLowerCase() == pokemonGuess){
+      wins++
+      nextPokemonS.style.visibility = "visible"
+      endContent.style.visibility = "visible"
+      endText.textContent = chooseWinText()
+      corPokemon.textContent = pokemon.Name.toUpperCase() + "!"
+      endStats.textContent = "Games played: " + gamesPlayed + ". Hints used: " + hintCounter + ". Guesses: " + userGuess + ". Wins: " + wins
+      submit.disabled = true
+      resetBtn.disabled = true
+      oneMore.disabled = false
+      oneMore.addEventListener("click", nextPokemon)
+     
+    }
+    else {
+      endText.textContent = "That is not correct. This is guess nr: " + userGuess
+      
+    }
+  }
+  function nextPokemon(){
+  let allHints = document.querySelectorAll(".hint")
+  hintCounter = 0
+  guess.value = ""
+  hintCount.textContent = ""
+  allHints.forEach(function(allHints){
+    allHints.textContent = "?"
+  })
+  corPokemon.textContent = "?"
+  addGame()
+  remove()
+  chooseGame()
+  oneMore.removeEventListener("click", nextPokemon)
+   
+}
+  function type1Fun(){
+    type1.textContent = pokemon.Type.Type1
+    hintCounter++
+    hintCount.textContent = "Hints used: " + hintCounter
+    type1.removeEventListener("click", type1Fun)
+  }
+  function type2Fun(){
+    type2.textContent = pokemon.Type.Type2
+    hintCounter++
+    hintCount.textContent = "Hints used: " + hintCounter
+    type2.removeEventListener("click", type2Fun)
+  }
+  function pokedexFun() {
+    pokedex.textContent = pokemon.Pokedex
+    hintCounter++
+    hintCount.textContent = "Hints used: " + hintCounter
+    pokedex.removeEventListener("click", pokedexFun)
+  }
+  function legendaryFun(){
+    legendary.textContent = pokemon.Legendary
+    hintCounter++
+    hintCount.textContent = "Hints used: " + hintCounter
+    legendary.removeEventListener("click", legendaryFun)
+  }
+  function evStagesFun(){
+    evStages.textContent = pokemon.EvStages
+    hintCounter++
+    hintCount.textContent = "Hints used: " + hintCounter
+    evStages.removeEventListener("click", evStagesFun)
+  }
+  function whichStageFun(){
+    whichStage.textContent = pokemon.WhichStage
+    hintCounter++
+    hintCount.textContent = "Hints used: " + hintCounter
+    whichStage.removeEventListener("click", whichStageFun)
+ }
+  function priColorFun(){
+    priColor.textContent = pokemon.Colors.Primary
+    hintCounter++
+    hintCount.textContent = "Hints used: " + hintCounter
+    priColor.removeEventListener("click", priColorFun)
+  }
+  function secColorFun(){
+    secColor.textContent = pokemon.Colors.Secondary
+    hintCounter++
+    hintCount.textContent = "Hints used: " + hintCounter
+    secColor.removeEventListener("click", secColorFun)
+  }
+  function generationFun(){
+    generation.textContent = pokemon.Generation
+    hintCounter++
+    hintCount.textContent = "Hints used: " + hintCounter
+    generation.removeEventListener("click", generationFun)
+  }
+  function categoryFun(){
+    category.textContent = pokemon.Category
+    hintCounter++
+    hintCount.textContent = "Hints used: " + hintCounter
+    category.removeEventListener("click", categoryFun)
+  }
+  
+  guess.value = ""
+  
+  type1X.addEventListener("click", type1Fun)
+  type2X.addEventListener("click", type2Fun)
+  pokedexX.addEventListener("click", pokedexFun)
+  legendaryX.addEventListener("click", legendaryFun)
+  evStagesX.addEventListener("click", evStagesFun)
+  whichStageX.addEventListener("click", whichStageFun)
+  priColorX.addEventListener("click", priColorFun)
+  secColorX.addEventListener("click", secColorFun)
+  generationX.addEventListener("click", generationFun)
+  categoryX.addEventListener("click", categoryFun)
+  
+  resetBtn.addEventListener("click", resetGame)
+  
+  submit.addEventListener("click", guessWho)
+  endContent.style.visibility = "hidden"
+  nextPokemonS.style.visibility = "hidden"
+}
+function chooseResetText (){
+  let number = Math.floor(Math.random() * resetText.length)
+  let text = resetText[number]
+  resetText.splice(number, 1)
+  return text
+}
+function chooseGame(){
+  let number = Math.floor(Math.random() * allGames.length)
+  allGames[number]()
+  allGames.splice(number, 1) 
+  resetBtn.disabled = false
+  submit.disabled = false
+}
+
+function game1fun(){
+  playGame(tyranitar)
+  removeGame()
+  gamesPlayed++
+}
+function game2fun(){
+  playGame(gyrados)
+  removeGame()
+  gamesPlayed++
+}
+function game3fun(){
+  playGame(kadabra)
+  removeGame()
+  gamesPlayed++
+}
+function game4fun(){
+  playGame(volcarona)
+  removeGame()
+  gamesPlayed++
+}
+function game5fun(){
+  playGame(lugia)
+  removeGame()
+  gamesPlayed++
+}
+function game6fun(){
+  playGame(chandelure)
+  removeGame()
+  gamesPlayed++
+}
+
+function addGame (){
+  randomGame.disabled = false
+}
+
+resetBtn.disabled = true
+submit.disabled = true
+oneMore.disabled = true
+addGame()
+
+
+endContent.style.visibility = "hidden"
+nextPokemonS.style.visibility = "hidden"
+
+randomGame.addEventListener("click", chooseGame)
