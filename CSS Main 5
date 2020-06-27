@@ -1,0 +1,47 @@
+body{background-color:#F1DAF2;}
+.allHints{
+  position: relative;
+  width: 26em;
+  height: 26em;
+  padding: 5em;
+  border-radius: 50%;
+  margin: 1.75em auto 0;
+  background-color: #82201B;
+}
+.hint1{
+    	display: block;
+    	position: absolute;
+    	top: 50%; left: 50%;
+    	width: 5em; height: 4em;
+    	margin: -2em;
+      padding: 15px 15px 15px 15px;
+      border-radius:35px;
+    }
+.hint1:hover{background-color:#CC4A43;}
+.allHints figure{
+  display: block; }
+    #type1X {
+      transform: translate(15em);width:3em;}
+    #type2X {
+      transform: rotate(36deg) translate(15em) rotate(-36deg);width:3em; height:2.6em;}
+    #pokedexX {
+      transform: rotate(70deg) translate(15em) rotate(-70deg);width:3em; height:3em;}
+    #legendaryX {
+      transform: rotate(110deg) translate(15em) rotate(-110deg);width:4em; height:2.6em;}
+    #evStagesX {
+      transform: rotate(145deg) translate(15em) rotate(-145deg);width:5em; height:3.5em; }
+    #whichStageX {
+      transform: rotate(180deg) translate(15em) rotate(-180deg);width:3em; height:4.5em;}
+    #priColorX { 
+      transform: rotate(215deg) translate(15em) rotate(-215deg);width:6em; height:3.5em; }
+    #secColorX {
+      transform: rotate(250deg) translate(15em) rotate(-250deg); width:6em; height:3.5em; }
+    #categoryX {
+      transform: rotate(285deg) translate(15em) rotate(-285deg);width:5em; height:3.3em;}
+    #generationX { 
+      transform: rotate(320deg) translate(15em) rotate(-320deg);width:3.3em; height:2.6em;}
+.hint{font-weight:bold;}
+#corPokemon{font-weight:bold;}
+
+.randomGame{color:white;background-color:#82201B;border-radius:6px;}
+.randomGame:hover{background-color:#CC4A43;}
