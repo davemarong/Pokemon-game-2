@@ -1,10 +1,9 @@
 <html>  
   <body>   
-    
     <!--H1 and game button -->
-    <section>        
+    <section>           
       <h1>Hey, and welcome to my game world!          
-      </h1> 
+      </h1>  
         
      <input type="button" class="randomGame" value="   Start!   " >  
       <hr>
@@ -44,26 +43,27 @@
       </div><i>Secondary Color</i></figure>  
       <figure class="hint1" id="generationX"><div class="hint" id="generation">
         ?
-      </div><i>Gen</i></figure> 
+      </div><i>Gen</i></figure>  
       <figure class="hint1" id="categoryX"><div class="hint" id="category">
         ?
-      </div><i>Category</i></figure>  
-      <figure class="hint1" id="corPokemon">?</figure>
-    </section>
+      </div><i>Category</i></figure>    
+      <figure class="image" id="corPokemon">?</figure>   
+      <img class="image" id="image">
+    </section> 
       
       <!--Reset button -->
       <figcaption>
-        <label id="resetLabel"><i>Want to choose another game?</i> 
+        <label id="resetLabel"><i>Want to choose another game?</i>  
           <input id="resetBtn" type="button" value="Reset">  
         </label>
       </figcaption>
     </figure>
-    <hr>
+    <hr> 
     
     <!--Guessing area -->
     <section>
       <label>Who do you think it is?
-        <input type="text" class="guess">  
+        <input type="text" class="guess">    
       </label>  
       <input type="button" class="submit" value="Choose!"> 
       <br />
@@ -74,16 +74,14 @@
       <hr>
       <label> Want to try the next pokemon?  
       <input type="button" class="oneMore" value="Next pokemon!">  
-      </label>
-    </section> 
+      </label>  
+    </section>
     
     <!--Endtext and game stats -->
     <section class="endContent"> 
       <h2 id="endText">Winning text</h2>
-      <figure id="endPokemon"> Picture of pokemon </figure>
       <p id="endStats">hints used, games played, try again?</p>   
-      <hr> 
-    </section>
+    </section> 
      
     <section>
       <p class="test"></p>
