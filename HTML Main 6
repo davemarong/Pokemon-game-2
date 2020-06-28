@@ -1,0 +1,90 @@
+<html>  
+  <body>   
+    <!--H1 and game button -->
+    <section>           
+      <h1>Hey, and welcome to my game world!          
+      </h1>  
+        
+     <input type="button" class="randomGame" value="   Start!   " >  
+      <hr>
+    </section>
+    
+    <!--Hintcount-->
+    <section> 
+      <p id="hintCount"></p> 
+    </section>
+    
+    <!--Hints -->
+    <figure>
+    <section class="allHints">
+      <figure class="hint1" id="type1X"><div class="hint" id="type1"> 
+        ?  
+        </div><i>Type 1</i></figure> 
+      <figure class="hint1" id="type2X"><div class="hint" id="type2"> 
+        ?
+      </div><i>Type 2</i></figure>
+      <figure class="hint1" id="pokedexX"><div class="hint" id="pokedex">    
+        ?
+      </div><i>Pokedex nr</i></figure>
+      <figure class="hint1" id="legendaryX"><div class="hint" id="legendary">
+        ?
+      </div><i>Legendary</i></figure>
+      <figure class="hint1" id="evStagesX"><div class="hint" id="evStages">
+        ?
+      </div><i>Evolutionary Stages</i></figure>
+      <figure class="hint1" id="whichStageX"><div class="hint" id="whichStage">      
+        ?
+      </div><i>Which Stage</i></figure> 
+      <figure class="hint1" id="priColorX"><div class="hint" id="priColor">
+        ?
+      </div><i>Primary Color</i></figure> 
+      <figure class="hint1" id="secColorX"><div class="hint" id="secColor">
+        ?
+      </div><i>Secondary Color</i></figure>  
+      <figure class="hint1" id="generationX"><div class="hint" id="generation">
+        ?
+      </div><i>Gen</i></figure>  
+      <figure class="hint1" id="categoryX"><div class="hint" id="category">
+        ?
+      </div><i>Category</i></figure>    
+      <figure class="image" id="corPokemon">?</figure>   
+      <img class="image" id="image">
+    </section> 
+      
+      <!--Reset button -->
+      <figcaption>
+        <label id="resetLabel"><i>Want to choose another game?</i>  
+          <input id="resetBtn" type="button" value="Reset">  
+        </label>
+      </figcaption>
+    </figure>
+    <hr> 
+    
+    <!--Guessing area -->
+    <section>
+      <label>Who do you think it is?
+        <input type="text" class="guess">    
+      </label>  
+      <input type="button" class="submit" value="Choose!"> 
+      <br />
+    </section>
+    
+    <!--Next pokemon-->
+    <section class="nextPokemon">
+      <hr>
+      <label> Want to try the next pokemon?  
+      <input type="button" class="oneMore" value="Next pokemon!">  
+      </label>  
+    </section>
+    
+    <!--Endtext and game stats -->
+    <section class="endContent"> 
+      <h2 id="endText">Winning text</h2>
+      <p id="endStats">hints used, games played, try again?</p>   
+    </section> 
+     
+    <section>
+      <p class="test"></p>
+    </section> 
+  </body>
+</html>
