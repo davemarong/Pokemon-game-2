@@ -1,0 +1,851 @@
+ <html>   
+  <head>
+   <style>
+     body{background:linear-gradient(#45B8C7, #F279E8);}
+.allHints{
+  position: relative;
+  width: 26em;
+  height: 26em;
+  padding: 5em;
+  border-radius: 50%;
+  margin: 1.75em auto 0;
+  background-color: #EB8171;
+ 
+} 
+#hintCount{
+      display: block;
+    	position: absolute;
+    	top: 50%; left: 50%;
+    	width: 5em; height: 4em;
+    	margin: -2em;
+      
+}
+.image{
+      display: block;
+    	position: absolute;
+    	top: 50%; left: 50%;
+    	width: 5em; height: 4em;
+    	margin: -2em;
+      padding: 15px 15px 15px 15px;
+      border-radius:35px;
+      filter: drop-shadow(5px 5px 9px black);
+}
+.guessingArea{
+      display: block;
+    	position: absolute;
+    	top: 50%; left: 50%;
+    	width: 5em; height: 4em;
+    	margin: -2em;
+}
+
+#endText{
+      display: block;
+    	position: absolute;
+    	top: 50%; left: 50%;
+    	width: 10em; height: 10em;
+    	margin: -2em;
+}
+#endStats{
+      display: block;
+    	position: absolute;
+    	top: 50%; left: 50%;
+    	width: 10em; height: 10em;
+    	margin: -2em;
+}
+.hint1{
+    	display: block;
+    	position: absolute;
+    	top: 50%; left: 50%;
+    	width: 5em; height: 4em;
+    	margin: -2em;
+      padding: 15px 15px 15px 15px;
+      border-radius:35px;
+    }
+.hint1:hover{background-color:#CC4A43;}
+
+
+.allHints figure{
+  display: block; }
+    #type1X {
+      transform: translate(15em);width:3em;}
+    #type2X {
+      transform: rotate(36deg) translate(15em) rotate(-36deg);width:3em; height:2.6em;}
+    #pokedexX {
+      transform: rotate(70deg) translate(15em) rotate(-70deg);width:3em; height:3em;}
+    #legendaryX {
+      transform: rotate(110deg) translate(15em) rotate(-110deg);width:4em; height:2.6em;}
+    #evStagesX {
+      transform: rotate(145deg) translate(15em) rotate(-145deg);width:5em; height:3.5em; }
+    #whichStageX {
+      transform: rotate(180deg) translate(15em) rotate(-180deg);width:3em; height:4.5em;}
+    #priColorX { 
+      transform: rotate(215deg) translate(15em) rotate(-215deg);width:6em; height:3.5em; }
+    #secColorX {
+      transform: rotate(250deg) translate(15em) rotate(-250deg); width:6em; height:3.5em; }
+    #categoryX {
+      transform: rotate(288deg) translate(15em) rotate(-288deg);width:5em; height:3.3em;}
+    #generationX { 
+      transform: rotate(325deg) translate(15em) rotate(-325deg);width:3.3em; height:2.6em;}
+    #hintCount { 
+      transform: rotate(340deg) translate(22em) rotate(-340deg);width:5em; height:2.6em;}
+    .guessingArea {
+        transform: rotate(49deg) translate(28em) rotate(-49deg);width:5em; height:2.6em;
+}
+    #endText{
+        transform: rotate(190deg) translate(17em) rotate(-190deg);width:8em; height:2.6em;
+}
+    #endStats{
+      transform: rotate(170deg) translate(26.5em) rotate(-170deg);width:10em; height:10em;
+}
+.hint{font-weight:bold;}
+#image{width:18em; height:18em; top:23%; left:30%;}
+#resetBtn{transform: rotate(124deg) translate(38.4em) rotate(-124deg);width:10em; height:10em;}
+.button{
+     display:inline-block;
+     padding:0.3em 1.2em;
+     margin:5px 0.1em 0.1em 0;
+     border:0.16em solid rgba(255,255,255,0);
+     border-radius:2em;
+     box-sizing: border-box;
+     text-decoration:none;
+     font-family:'Roboto',sans-serif;
+     font-weight:300;
+     color:#FFFFFF;
+     text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+     text-align:center;
+     transition: all 0.2s;
+     background-color:#74BEE6;
+}
+#randomGame{
+      display: block;
+    	position: absolute;
+    	top: 77%; left: 45%;
+    	width: 12em; height: 4em;
+    	margin: -2em;
+}
+
+.button:hover{
+  border-color:rgba(255,255,255,1);
+}
+.guess{
+  box-sizing:border-box;
+  width:120px;
+  height:24px;
+  padding:2px 2px 2px 2px;
+  margin:13px 10px 10px 0px;
+  border:0;
+  border-radius:10px;
+  box-shadow:0 0 15px 10px rgba(0,0,0,0.09);
+  background:transparent;
+  outline:0; 
+}
+#oneMore{
+      display: block;
+    	position: absolute;
+    	top: 102%; left: 45%;
+    	width: 12em; height: 4em;
+    	margin: -2em;
+}
+#resetBtn{
+      display: block;
+    	position: absolute;
+    	top: 50%; left: 50%;
+    	width: 6.4em; height: 2.2em;
+    	margin: -2em;
+}
+h1{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#F1C9F2;
+  box-shadow:0 0 2px 20px rgba(240,184,240,0.6);
+}
+hr{border-color:#F1C9F2; opacity:0.4;}
+    </style>
+  </head>  
+  <body>        
+    <!--H1 and game button -->
+    <section>              
+      <h1>Time to test your pokemon knowledge       
+      </h1>   
+         
+      <hr>
+    </section>  
+    
+    
+    <!--Main area-->
+    <figure>
+      
+
+      
+      <!--Hints -->
+    <section class="allHints">
+      <figure class="hint1" id="type1X"><div class="hint" id="type1"> 
+        ?  
+        </div><i>Type 1</i></figure> 
+      <figure class="hint1" id="type2X"><div class="hint" id="type2">  
+        ?
+      </div><i>Type 2</i></figure>
+      <figure class="hint1" id="pokedexX"><div class="hint" id="pokedex">    
+        ?
+      </div><i>Pokedex nr</i></figure>
+      <figure class="hint1" id="legendaryX"><div class="hint" id="legendary">
+        ?
+      </div><i>Legendary</i></figure>
+      <figure class="hint1" id="evStagesX"><div class="hint" id="evStages">
+        ?
+      </div><i>Evolutionary Stages</i></figure>
+      <figure class="hint1" id="whichStageX"><div class="hint" id="whichStage">      
+        ?
+      </div><i>Which Stage</i></figure> 
+      <figure class="hint1" id="priColorX"><div class="hint" id="priColor">
+        ?
+      </div><i>Primary Color</i></figure> 
+      <figure class="hint1" id="secColorX"><div class="hint" id="secColor">
+        ?
+      </div><i>Secondary Color</i> </figure>   
+      <figure class="hint1" id="generationX"><div class="hint" id="generation">
+        ?
+      </div><i>Gen</i></figure>  
+      <figure class="hint1" id="categoryX"><div class="hint" id="category"> 
+        ?
+      </div><i>Category</i></figure>     
+      <figure class="image" id="corPokemon">?</figure>     
+      <img class="image" id="image"> 
+      
+      <!--Hintcount-->
+    <section> 
+      <p id="hintCount"></p> 
+    </section> 
+    </section> 
+      
+      <!--Reset button -->
+      <figcaption id="resetArea"> 
+        <label id="resetLabel"><i></i>  
+          <input id="resetBtn" type="button" value="Reset" class="button">    
+        </label> 
+      </figcaption> 
+      
+       <!--Guessing area -->
+    <section class="guessingArea">
+      <label>Who do you think it is?
+        <input type="text" class="guess" placeholder="Write here...">    
+      </label>   
+      <input type="button" id="submit" class="button" value="Choose!">  
+      <br />
+      </section>
+      
+      <!--Endtext and game stats -->
+    <section class="endContent">    
+      <h2 id="endText">Winning text</h2>
+      <p id="endStats">hints used, games played, try again?</p>   
+    </section> 
+      
+      <!--Start button-->
+      <section>
+      <input type="button" class="button" id="randomGame" value="   Start!   " > 
+      </section>
+      
+        <!--Next pokemon-->
+    <section id="nextPokemon">    
+      <label>
+      <input class="button" type="button" id="oneMore" value="Next pokemon!">  
+      </label>  
+    </section>
+      
+      
+    </figure> 
+    
+     
+    <section>
+      <p class="test"></p>
+    </section> 
+    
+   <script>
+     let tyranitar = {
+  Type: {Type1: "Dark", Type2: "Rock"}, 
+  Pokedex: "#248",
+  Legendary: "No",
+  EvStages: "3",
+  WhichStage: "Stage 3/3",
+  FirstStage: "Larvitar",
+  SecondStage: "Pupitar",
+  Colors: {Primary:"Green", Secondary: "Blue/Black"},
+  Generation: "2",
+  Category: "Armor pokemon",
+  Name: "Tyranitar",
+  Src: "https://cdn.bulbagarden.net/upload/thumb/8/82/248Tyranitar.png/1200px-248Tyranitar.png",
+  
+}
+let gyrados = {
+  Type: {Type1: "Water", Type2: "Flying"},
+  Pokedex: "#130",
+  Legendary: "No",
+  EvStages: "2",
+  WhichStage: "Stage 2/2",
+  FirstStage: "Magikarp",
+  Colors: {Primary:"Blue", Secondary: "Tan/White"},
+  Generation: "1",
+  Category: "Atrocious pokemon",
+  Name: "Gyrados",
+  Src: "https://cdn.bulbagarden.net/upload/4/41/130Gyarados.png",
+}
+let kadabra = {
+  Type: {Type1: "Psychic", Type2: "Psychic"},
+  Pokedex: "#064",
+  Legendary: "No",
+  EvStages: "3",
+  WhichStage: "Stage 2/3",
+  FirstStage: "Abra",
+  ThirdStage: "Alakazam",
+  Colors: {Primary:"Yellow", Secondary: "Brown"},
+  Generation: "1",
+  Category: "Psi pokemon",
+  Name: "Kadabra",
+  Src: "https://cdn.bulbagarden.net/upload/9/97/064Kadabra.png",
+}
+let volcarona = {
+  Type: {Type1: "Fire", Type2: "Bug"},
+  Pokedex: "#637",
+  Legendary: "No",
+  EvStages: "2",
+  WhichStage: "Stage 2/2",
+  FirstStage: "Larvesta",
+  Colors: {Primary:"Red", Secondary: "Black/White"},
+  Generation: "5",
+  Category: "Sun pokemon",
+  Name: "Volcarona",
+  Src: "https://cdn.bulbagarden.net/upload/6/6b/637Volcarona.png",
+}
+let lugia = {
+  Type: {Type1: "Flying", Type2: "Psychic"},
+  Pokedex: "#249",
+  Legendary: "Yes",
+  EvStages: "1",
+  WhichStage: "Stage 1/1",
+  Colors: {Primary:"Silver", Secondary: "Lightblue/blue"},
+  Generation: "2",
+  Category: "Diving pokemon",
+  Name: "Lugia",
+  Src: "https://cdn.bulbagarden.net/upload/thumb/4/44/249Lugia.png/1200px-249Lugia.png",
+}
+let chandelure = {
+  Type: {Type1: "Ghost", Type2: "Fire"},
+  Pokedex: "#609",
+  Legendary: "No",
+  EvStages: "3",
+  WhichStage: "Stage 3\3",
+  FirstStage: "Litwick",
+  SecondStage: "Lampent",
+  Colors: {Primary:"Purple", Secondary: "Black"},
+  Generation: "5",
+  Category: "Luring pokemon",
+  Name: "Chandelure",
+  Src: "https://cdn.bulbagarden.net/upload/6/65/609Chandelure.png",
+}
+let bulbasaur = {
+  Type: {Type1: "Grass", Type2: "Grass"},
+  Pokedex: "#001",
+  Legendary: "No",
+  EvStages: "3",
+  WhichStage: "Stage 1\3",
+  Colors: {Primary:"Light Green", Secondary: "Dark Green"},
+  Generation: "1",
+  Category: "Seed pokemon",
+  Name: "Bulbasaur",
+  Src: "https://static.pokemonpets.com/images/monsters-images-800-800/1-Bulbasaur.png",
+}
+let salamence = {
+  Type: {Type1: "Dragon", Type2: "Flying"},
+  Pokedex: "#373",
+  Legendary: "No",
+  EvStages: "3",
+  WhichStage: "Stage 3\3",
+  Colors: {Primary:"Blue", Secondary: "Red"},
+  Generation: "3",
+  Category: "Dragon pokemon",
+  Name: "Salamence",
+  Src: "https://cdn.bulbagarden.net/upload/thumb/4/41/373Salamence.png/1200px-373Salamence.png",
+}
+let dratini = {
+  Type: {Type1: "Dragon", Type2: "Dragon"},
+  Pokedex: "#147",
+  Legendary: "No",
+  EvStages: "3",
+  WhichStage: "Stage 1\3",
+  Colors: {Primary:"White", Secondary: "Light Blue"},
+  Generation: "1",
+  Category: "Dragon pokemon",
+  Name: "Dratini",
+  Src: "https://cdn.bulbagarden.net/upload/c/cc/147Dratini.png",
+}
+let aggron = {
+  Type: {Type1: "Steel", Type2: "Rock"},
+  Pokedex: "#306",
+  Legendary: "No",
+  EvStages: "3",
+  WhichStage: "Stage 3\3",
+  Colors: {Primary:"Black", Secondary: "Grey"},
+  Generation: "3",
+  Category: "Iron Armor pokemon",
+  Name: "Aggron",
+  Src: "https://cdn.bulbagarden.net/upload/thumb/6/6d/306Aggron.png/1200px-306Aggron.png",
+}
+let metang = {
+  Type: {Type1: "Steel", Type2: "Psychic"},
+  Pokedex: "#375",
+  Legendary: "No",
+  EvStages: "3",
+  WhichStage: "Stage 2\3",
+  Colors: {Primary:"Blue", Secondary: "Grey"},
+  Generation: "3",
+  Category: "Iron Claw pokemon",
+  Name: "Metang",
+  Src: "https://static.pokemonpets.com/images/monsters-images-800-800/375-Metang.png",
+}
+let deoxys = {
+  Type: {Type1: "Psychic", Type2: "Psychic"},
+  Pokedex: "#386",
+  Legendary: "yes",
+  EvStages: "1",
+  WhichStage: "Stage 1/1",
+  Colors: {Primary:"Red", Secondary: "Blue"},
+  Generation: "3",
+  Category: "DNA Pokemon",
+  Name: "Deoxys",
+  Src: "https://cdn.bulbagarden.net/upload/thumb/e/e7/386Deoxys.png/1200px-386Deoxys.png",
+}
+let flygon = {
+  Type: {Type1: "Dragon", Type2: "Ground"},
+  Pokedex: "#330",
+  Legendary: "no",
+  EvStages: "3",
+  WhichStage: "Stage 3/3",
+  Colors: {Primary:"Green", Secondary: "Red"},
+  Generation: "3",
+  Category: "Mystic Pokemon",
+  Name: "Flygon",
+  Src: "https://cdn.bulbagarden.net/upload/f/f1/330Flygon.png",
+}
+let garchomp = {
+  Type: {Type1: "Dragon", Type2: "Ground"},
+  Pokedex: "#445",
+  Legendary: "no",
+  EvStages: "3",
+  WhichStage: "Stage 3/3",
+  Colors: {Primary:"Blue", Secondary: "Red"},
+  Generation: "4",
+  Category: "Mach Pokemon",
+  Name: "Garchomp",
+  Src: "https://cdn.bulbagarden.net/upload/thumb/f/fa/445Garchomp.png/1200px-445Garchomp.png",
+}
+let conkeldurr = {
+  Type: {Type1: "Fighting", Type2: "Fighting"},
+  Pokedex: "#534",
+  Legendary: "no",
+  EvStages: "3",
+  WhichStage: "Stage 3/3",
+  Colors: {Primary:"Brown", Secondary: "Grey"},
+  Generation: "5",
+  Category: "Muscular Pokemon",
+  Name: "Conkeldurr",
+  Src: "https://cdn.bulbagarden.net/upload/thumb/1/11/534Conkeldurr.png/600px-534Conkeldurr.png",
+}
+let hydreigon = {
+  Type: {Type1: "Dragon", Type2: "Dark"},
+  Pokedex: "#635",
+  Legendary: "no",
+  EvStages: "3",
+  WhichStage: "Stage 3/3",
+  Colors: {Primary:"Black", Secondary: "Blue/Purple"},
+  Generation: "5",
+  Category: "Brutal Pokemon",
+  Name: "Hydreigon",
+  Src: "https://cdn.bulbagarden.net/upload/thumb/3/3e/635Hydreigon.png/1200px-635Hydreigon.png",
+}
+
+let pokemonSrc = {
+  Tyranitar: "https://cdn.bulbagarden.net/upload/thumb/8/82/248Tyranitar.png/1200px-248Tyranitar.png",
+  Gyrados: "https://cdn.bulbagarden.net/upload/4/41/130Gyarados.png",
+  Kadabra: "https://cdn.bulbagarden.net/upload/9/97/064Kadabra.png",
+  Volcarona: "https://cdn.bulbagarden.net/upload/6/6b/637Volcarona.png",
+  Lugia: "https://cdn.bulbagarden.net/upload/thumb/4/44/249Lugia.png/1200px-249Lugia.png",
+  Chandelure: "https://cdn.bulbagarden.net/upload/6/65/609Chandelure.png"
+}
+
+let resetText = [
+"Really man? This is the easiest to guess.....", "It's okey dude, can't guess em'all you know", "This on is pretty hard man, dont worry about it", "You'll get it next time, I just know it!", "Okey, i will give you an easy one next round", "Yeah I know, you almost had it"
+]
+let winText = [
+  "Shiiit bro, you actually got it right. Im kinda impressed.", "Wow, thats correct! Good job, girl.", "Eyyyyyyy, thats how it's done!", "I have to say, I didn't think you would guess the right one.", "Hmmm, are you cheating dude? Nobody get's this one right.", "Ash would be proud of you"
+]
+let allGames = [
+ game1fun, game2fun, game3fun, game4fun, game5fun, game6fun, game7fun, game8fun, game9fun, game10fun, game11fun, game12fun, game13fun, game14fun, game15fun, game16fun,
+]
+
+
+
+let gamesPlayed = 0
+let hintCounter = 0
+let userGuess = 0
+let wins = 0
+let totalHints = 0
+
+
+let resetBtn = document.querySelector("#resetBtn")
+let hintCount = document.querySelector("#hintCount")
+let randomGame = document.querySelector("#randomGame")
+
+let allHints = document.querySelector(".allHints")
+
+let test = document.querySelector(".test")
+
+let image = document.querySelector("#image")
+
+let type1X = document.querySelector("#type1X")
+let type1 = document.querySelector("#type1")
+let type2X = document.querySelector("#type2X")
+let type2 = document.querySelector("#type2")
+let pokedexX = document.querySelector("#pokedexX")
+let pokedex = document.querySelector("#pokedex")
+let legendaryX = document.querySelector("#legendaryX")
+let legendary = document.querySelector("#legendary")
+let evStagesX = document.querySelector("#evStagesX")
+let evStages = document.querySelector("#evStages")
+let whichStageX = document.querySelector("#whichStageX")
+let whichStage = document.querySelector("#whichStage")
+let priColorX = document.querySelector("#priColorX")
+let priColor = document.querySelector("#priColor")
+let secColorX = document.querySelector("#secColorX")
+let secColor = document.querySelector("#secColor")
+let generationX = document.querySelector("#generationX")
+let generation = document.querySelector("#generation")
+let categoryX = document.querySelector("#categoryX")
+let category = document.querySelector("#category")
+let corPokemon = document.querySelector("#corPokemon")
+
+let nextPokemonS = document.querySelector("#nextPokemon")
+let endContent = document.querySelector(".endContent")
+
+let endText = document.querySelector("#endText")
+let endStats = document.querySelector("#endStats")
+
+let guessingArea = document.querySelector(".guessingArea")
+let resetArea = document.querySelector("#resetArea")
+let guess = document.querySelector(".guess")
+let submit = document.querySelector("#submit")
+let oneMore = document.querySelector("#oneMore")
+
+function removeGame(){
+  randomGame.disabled = true
+}
+
+function playGame (pokemon){
+  function remove(){
+    type1X.removeEventListener("click", type1Fun)
+    type2X.removeEventListener("click", type2Fun)
+    pokedexX.removeEventListener("click", pokedexFun)
+    legendaryX.removeEventListener("click", legendaryFun)
+    evStagesX.removeEventListener("click", evStagesFun)
+    whichStageX.removeEventListener("click", whichStageFun)
+    priColorX.removeEventListener("click", priColorFun)
+    secColorX.removeEventListener("click", secColorFun) 
+    generationX.removeEventListener("click", generationFun)
+    categoryX.removeEventListener("click", categoryFun)
+    submit.removeEventListener("click", guessWho)
+  }
+  function resetGame(){
+  let everyHints = document.querySelectorAll(".hint")
+  totalHints += hintCounter
+  hintCounter = 0
+  guess.value = ""
+  hintCount.textContent = ""
+  everyHints.forEach(function(everyHints){
+    everyHints.textContent = "?"
+  })
+  corPokemon.textContent = "?"
+  addGame()
+  remove()
+  resetBtn.disabled = true
+  endText.textContent = chooseResetText()
+  endStats.textContent = "Games played: " + gamesPlayed + ". Hints used: " + hintCounter + ". Guesses: " + userGuess + ". Wins: " + wins + ". The pokemon you were looking for is " + pokemon.Name
+  resetBtn.removeEventListener("click", resetGame)
+  chooseGame()
+} 
+  function guessWho(){
+    userGuess++
+    let pokemonGuess = guess.value.toLowerCase() 
+    if (pokemon.Name.toLowerCase() == pokemonGuess){
+      wins++
+      document.body.style.backgroundColor = "#BCAABD"
+      allHints.style.backgroundColor = "#AB3C2B"
+      totalHints += hintCounter
+      image.src = pokemon.Src
+      corPokemon.textContent = ""
+      resetArea.style.visibility = "hidden"
+      guessingArea.style.visibility = "hidden"
+      endText.style.visibility = "visible"
+      nextPokemonS.style.visibility = "visible"
+      endStats.style.visibility = "visible"    
+      image.style.opacity = 1
+      endText.innerHTML = chooseWinText()
+      //corPokemon.textContent = pokemon.Name.toUpperCase() + "!"
+      endStats.innerHTML = 
+        "Games played: " + gamesPlayed +
+        "<br/ >" +
+        "Hints used total: " + totalHints +
+        "<br/ >" +
+        "Guesses: " + userGuess +
+        "<br/ >" +
+        "Wins: " + wins
+      submit.disabled = true
+      resetBtn.disabled = true
+      oneMore.disabled = false
+      image.style.visibility = "visible"
+      oneMore.addEventListener("click", nextPokemon)
+      resetBtn.removeEventListener("click", resetGame)
+      
+      
+    }
+    else {
+      endText.style.visibility = "visible"
+      endText.textContent = "Wrong. This is guess nr: " + userGuess
+      function hideTextContent(){
+        endText.style.visibility = "hidden"
+      }
+      setTimeout(hideTextContent, 4000)
+    }
+  }
+  function nextPokemon(){
+  let everyHints = document.querySelectorAll(".hint")
+  hintCounter = 0
+  guess.value = ""
+  image.style.visibility = "hidden"
+  hintCount.textContent = ""
+  everyHints.forEach(function(everyHints){
+    everyHints.textContent = "?"
+  })
+  corPokemon.textContent = "?"
+  image.style.opacity = 0
+  image.style.transition = "opacity 4s" 
+  document.body.style.backgroundColor = "#F1C7F2"
+  addGame()
+  remove()
+  chooseGame()
+  oneMore.removeEventListener("click", nextPokemon)
+  resetBtn.removeEventListener("click", resetGame)
+   
+}
+  
+  function type1Fun(){
+    type1.textContent = pokemon.Type.Type1
+    hintCounter++
+    hintCount.textContent = "Hints used: " + hintCounter
+    type1X.removeEventListener("click", type1Fun)
+  }
+  function type2Fun(){
+    type2.textContent = pokemon.Type.Type2
+    hintCounter++
+    hintCount.textContent = "Hints used: " + hintCounter
+    type2X.removeEventListener("click", type2Fun)
+  }
+  function pokedexFun() {
+    pokedex.textContent = pokemon.Pokedex
+    hintCounter++
+    hintCount.textContent = "Hints used: " + hintCounter
+    pokedexX.removeEventListener("click", pokedexFun)
+  }
+  function legendaryFun(){
+    legendary.textContent = pokemon.Legendary
+    hintCounter++
+    hintCount.textContent = "Hints used: " + hintCounter
+    legendaryX.removeEventListener("click", legendaryFun)
+  }
+  function evStagesFun(){
+    evStages.textContent = pokemon.EvStages
+    hintCounter++
+    hintCount.textContent = "Hints used: " + hintCounter
+    evStagesX.removeEventListener("click", evStagesFun)
+  }
+  function whichStageFun(){
+    whichStage.textContent = pokemon.WhichStage
+    hintCounter++
+    hintCount.textContent = "Hints used: " + hintCounter
+    whichStageX.removeEventListener("click", whichStageFun)
+ }
+  function priColorFun(){
+    priColor.textContent = pokemon.Colors.Primary
+    hintCounter++
+    hintCount.textContent = "Hints used: " + hintCounter
+    priColorX.removeEventListener("click", priColorFun)
+  }
+  function secColorFun(){
+    secColor.textContent = pokemon.Colors.Secondary
+    hintCounter++
+    hintCount.textContent = "Hints used: " + hintCounter
+    secColorX.removeEventListener("click", secColorFun)
+  }
+  function generationFun(){
+    generation.textContent = pokemon.Generation
+    hintCounter++
+    hintCount.textContent = "Hints used: " + hintCounter
+    generationX.removeEventListener("click", generationFun)
+  }
+  function categoryFun(){
+    category.textContent = pokemon.Category
+    hintCounter++
+    hintCount.textContent = "Hints used: " + hintCounter
+    categoryX.removeEventListener("click", categoryFun)
+  }
+  
+  guess.value = ""
+  
+  type1X.addEventListener("click", type1Fun)
+  type2X.addEventListener("click", type2Fun)
+  pokedexX.addEventListener("click", pokedexFun)
+  legendaryX.addEventListener("click", legendaryFun)
+  evStagesX.addEventListener("click", evStagesFun)
+  whichStageX.addEventListener("click", whichStageFun)
+  priColorX.addEventListener("click", priColorFun)
+  secColorX.addEventListener("click", secColorFun)
+  generationX.addEventListener("click", generationFun)
+  categoryX.addEventListener("click", categoryFun)
+  
+  resetBtn.addEventListener("click", resetGame)
+  
+  submit.addEventListener("click", guessWho)
+  endStats.style.visibility = "hidden"
+  endText.style.visibility = "hidden"
+  nextPokemonS.style.visibility = "hidden"
+}
+function chooseResetText (){
+  let number = Math.floor(Math.random() * resetText.length)
+  let text = resetText[number]
+  resetText.splice(number, 1)
+  return text
+}
+function chooseGame(){
+  let number = Math.floor(Math.random() * allGames.length)
+  allGames[number]()
+  allGames.splice(number, 1) 
+  resetBtn.disabled = false
+  submit.disabled = false
+  guessingArea.style.visibility = "visible"
+  resetArea.style.visibility = "visible"
+  randomGame.style.visibility = "hidden"
+  allHints.style.backgroundColor = "#EB523B"
+  allHints.style.setProperty("filter", "drop-shadow(0px 0px 5px black)")
+}
+function chooseWinText(){
+  let number = Math.floor(Math.random() * winText.length)
+  let text = winText[number]
+  return text
+}
+
+function game1fun(){
+  playGame(tyranitar)
+  removeGame()
+  gamesPlayed++
+}
+function game2fun(){
+  playGame(gyrados)
+  removeGame()
+  gamesPlayed++
+}
+function game3fun(){
+  playGame(kadabra)
+  removeGame()
+  gamesPlayed++
+}
+function game4fun(){
+  playGame(volcarona)
+  removeGame()
+  gamesPlayed++
+}
+function game5fun(){
+  playGame(lugia)
+  removeGame()
+  gamesPlayed++
+}
+function game6fun(){
+  playGame(chandelure)
+  removeGame()
+  gamesPlayed++
+}
+function game7fun(){
+  playGame(bulbasaur)
+  removeGame()
+  gamesPlayed++
+}
+function game8fun(){
+  playGame(salamence)
+  removeGame()
+  gamesPlayed++
+}
+function game9fun(){
+  playGame(dratini)
+  removeGame()
+  gamesPlayed++
+}
+function game10fun(){
+  playGame(aggron)
+  removeGame()
+  gamesPlayed++
+}
+function game11fun(){
+  playGame(metang)
+  removeGame()
+  gamesPlayed++
+}
+function game12fun(){
+  playGame(deoxys)
+  removeGame()
+  gamesPlayed++
+}
+function game13fun(){
+  playGame(flygon)
+  removeGame()
+  gamesPlayed++
+}
+function game14fun(){
+  playGame(garchomp)
+  removeGame()
+  gamesPlayed++
+}
+function game15fun(){
+  playGame(conkeldurr)
+  removeGame()
+  gamesPlayed++
+}
+function game16fun(){
+  playGame(hydreigon)
+  removeGame()
+  gamesPlayed++
+}
+
+function addGame (){
+  randomGame.disabled = false
+}
+image.style.opacity = 0
+image.style.transition = "opacity 4s"
+resetBtn.disabled = true
+submit.disabled = true
+oneMore.disabled = true
+addGame()
+
+image.style.visibility = "hidden"
+endStats.style.visibility = "hidden"
+endText.style.visibility = "hidden"
+nextPokemonS.style.visibility = "hidden"
+guessingArea.style.visibility = "hidden"
+resetArea.style.visibility = "hidden"
+
+
+randomGame.addEventListener("click", chooseGame)
+
+    </script>
+  </body>
+  
+</html>
